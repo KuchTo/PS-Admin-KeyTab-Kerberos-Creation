@@ -108,7 +108,6 @@ finally
             write-Host $Informations 
             $AltDomain = $Domain.ToUpper()
             ktpass -princ "$ServiceName/$serverName.$Domain@$AltDomain" -mapuser $UPN -pass $PWD -crypto $crypto -mapOp set -ptype KRB5_NT_PRINCIPAL -out $FullKeyTabFileName >> $LognameFileName 
-            #Muster: C:\>ktpass -princ HTTP/[Hostname].office.dir@OFFICE.DIR -mapuser [Account] -pass [Passwort]  -crypto AES128-SHA1 -mapOp set -ptype KRB5_NT_PRINCIPAL -out C:\http_[Hostname].krb5keytab 
             }
         catch
             {
